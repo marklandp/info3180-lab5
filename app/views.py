@@ -37,8 +37,8 @@ def before_request():
 @app.route('/login', methods=['GET', 'POST'])
 @oid.loginhandler
 def login():
-    if g.user is not None and g.user.is_authenticated():
-        return redirect(url_for('index'))
+    # if g.user is not None and g.user.is_authenticated():
+    #     return redirect(url_for('index'))
     form = LoginForm()
     print app.config['OPENID_PROVIDERS']
     if form.validate_on_submit():
